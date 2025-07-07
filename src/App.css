@@ -1,0 +1,227 @@
+/* src/App.css */
+/* Reset básico para uma base limpa */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
+  background-color: #1a1a1a; /* Fundo escuro para a sensação futurista/luxo */
+  color: #e0e0e0; /* Cor de texto clara */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Suaviza as fontes */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #33CCFF; /* Cor de link para um toque moderno */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para o container principal da aplicação */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o footer fique na parte inferior */
+}
+
+/* Estilos para o conteúdo principal */
+.app-main {
+  flex-grow: 1;
+  padding: 40px 20px;
+  max-width: 100%; /* AGORA OCUPA A TELA TODA */
+  margin: 0 auto; /* Pode manter ou apagar, dependendo do efeito. Para tela cheia, é bom ter */
+}
+
+/* Estilos do Header */
+.app-header {
+  background-color: #222;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.header-content .store-title {
+  font-size: 2.2em;
+  color: #33FFCC; /* Cor vibrante para o título */
+  text-shadow: 0 0 8px rgba(51, 255, 204, 0.5); /* Efeito neon sutil */
+}
+
+.header-content .tagline {
+  font-size: 0.9em;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav ul li a {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #E0E0E0; /* Cor padrão para links */
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #33CCFF; /* Cor de destaque ao passar o mouse */
+  text-decoration: none;
+}
+
+/* Estilos do ProductList */
+.product-list-section {
+  margin-top: 40px;
+  max-width: 1200px; /* Limita a largura do painel de produtos */
+  margin: 40px auto; /* Centraliza o painel na tela */
+  padding: 0 20px; /* Adiciona um pouco de padding nas laterais */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #33CCFF; /* Cor vibrante para títulos de seção */
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(51, 204, 255, 0.5);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid mais adaptável */
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Estilos do ProductCard */
+.product-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  /* NOVO box-shadow para mais neon */
+  box-shadow: 0 0 15px rgba(51, 255, 204, 0.4), 0 8px 16px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+  /* NOVO box-shadow para mais neon no hover */
+  box-shadow: 0 0 25px rgba(51, 255, 204, 0.6), 0 15px 25px rgba(0,0,0,0.8);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px; /* Altura fixa para as imagens */
+  object-fit: cover;
+  border-bottom: 1px solid #444;
+}
+
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Permite que o info ocupe o espaço restante */
+}
+
+.product-name {
+  font-size: 1.4em;
+  color: #33FFCC;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #33CCFF;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #b0b0b0;
+  flex-grow: 1; /* Faz a descrição ocupar mais espaço */
+  margin-bottom: 15px;
+}
+
+.add-to-cart-button {
+  background-color: #33CCFF;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center; /* Centraliza o botão */
+  width: 90%; /* Ajusta a largura */
+}
+
+.add-to-cart-button:hover {
+  background-color: #00BFFF; /* Cor mais escura no hover */
+  transform: translateY(-2px); /* Pequena elevação */
+}
+
+/* Estilos do Footer */
+.app-footer {
+  background-color: #222;
+  padding: 30px 40px;
+  margin-top: auto; /* Empurra o footer para o final da página */
+  border-top: 1px solid #444;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+.footer-content p {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #33CCFF;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  color: #00BFFF;
+}
+
+/* Estilos para Mobile (Responsividade) */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .main-nav ul li a {
+    font-size: 1em;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+}
